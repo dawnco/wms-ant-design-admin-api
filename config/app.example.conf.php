@@ -20,7 +20,7 @@ return [
             "hostname" => "127.0.0.1",
             "username" => "root",
             "password" => "root",
-            "database" => "test",
+            "database" => "admin_demo",
             "port" => 3306,
             "charset" => "utf8mb4",
         ],
@@ -31,11 +31,6 @@ return [
             "port" => 6379,
             "password" => ""
         ]
-    ],
-    "riskRedis" => [
-        "hostname" => "127.0.0.1",
-        "port" => 6379,
-        "db" => 2,
     ],
     "aliyun" => [
         'log' => [

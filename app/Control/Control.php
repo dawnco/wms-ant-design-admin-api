@@ -6,7 +6,9 @@
 
 namespace App\Control;
 
+use Wms\Database\WDbConnect;
 use Wms\Fw\Request;
+use Wms\Fw\WDb;
 
 class Control
 {
@@ -16,6 +18,8 @@ class Control
      */
     protected Request $request;
 
+    protected WDbConnect $db;
+
     public function __construct($request)
     {
         $this->request = $request;
@@ -24,7 +28,18 @@ class Control
 
     protected function init(): void
     {
+        $this->db = WDb::connection();
+    }
 
+    protected function input($key = null, $default = '')
+    {
+        return $this->request->input($key, $default);
+    }
+
+    protected function inputArr2Val($key = null, $default = '')
+    {
+        $val = $this->request->input($key, $default);
+        return is_array($val) ? implode("", $val) : $default;
     }
 
 }
