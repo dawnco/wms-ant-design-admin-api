@@ -17,6 +17,11 @@ use App\Lib\Util\Session;
 class LoginControl extends Control
 {
 
+    protected function init(): void
+    {
+
+    }
+
     public function login()
     {
 
@@ -35,6 +40,7 @@ class LoginControl extends Control
         if ($admin->enabled == AppConstant::NO) {
             throw new AppException('账号被禁用');
         }
+
 
         if (password_verify($password, $admin->password)) {
 
@@ -61,7 +67,8 @@ class LoginControl extends Control
 
     }
 
-    public function userInfo(){
+    public function userInfo()
+    {
         return [
             'userId' => Session::get("userId"),
             'username' => Session::get("username"),

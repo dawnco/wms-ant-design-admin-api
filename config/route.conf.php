@@ -7,6 +7,7 @@
 use App\Control\Admin\AdminControl;
 use App\Control\Admin\AdminRoleControl;
 use App\Control\Admin\LoginControl;
+use App\Control\Admin\PassportControl;
 use App\Control\Admin\RoutesControl;
 
 return [
@@ -31,6 +32,8 @@ return [
     '/admin/enabled' => ['c' => [AdminControl::class, 'enabled']],
 
     '/role/index' => ['c' => [AdminRoleControl::class, 'index']],
+
+    '/user/password' => ['c' => [PassportControl::class, 'changePassword']],
 
 
 ];

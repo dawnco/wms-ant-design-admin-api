@@ -11,7 +11,7 @@
  Target Server Version : 80029
  File Encoding         : 65001
 
- Date: 24/10/2023 12:32:53
+ Date: 24/10/2023 15:45:07
 */
 
 SET NAMES utf8mb4;
@@ -28,7 +28,7 @@ CREATE TABLE `admin`  (
   `name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `avatar` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `phone` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `password` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `mobile` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `role` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT '',
   `group_id` int NOT NULL DEFAULT 0,
@@ -41,8 +41,7 @@ CREATE TABLE `admin`  (
 -- ----------------------------
 -- Records of admin
 -- ----------------------------
-INSERT INTO `admin` VALUES (1, 1, 'admin', 'admin', '', '', '$2y$10$LBgeKAZ0.Y/FUPTaRaOGS.of12rJyFrF5MI7.PDfcF8ZcFtPWSz8C', '', '', 0, 0, 1698121919);
-INSERT INTO `admin` VALUES (2, 1, '33', '33', '', '', '$2y$10$4N0HVMeEXmw0/VezHd4S8eeGHm8J46SA3V/9czp4JzcWhghSMZAUe', '333', '', 0, 1698118763, 1698121516);
+INSERT INTO `admin` VALUES (1, 1, 'admin', 'admin', '', '', '$2y$10$w063FTQuiLGIrq7GV0mlxeH6SIOx.TVdzpmj0.a0pYg.LUL5lAtC.', '', '', 0, 0, 1698121919);
 
 -- ----------------------------
 -- Table structure for admin_role
@@ -83,10 +82,6 @@ CREATE TABLE `admin_role_relation`  (
 -- ----------------------------
 -- Records of admin_role_relation
 -- ----------------------------
-INSERT INTO `admin_role_relation` VALUES (1, 2, 12, 1698121516, 1698121516);
-INSERT INTO `admin_role_relation` VALUES (2, 2, 11, 1698121516, 1698121516);
-INSERT INTO `admin_role_relation` VALUES (3, 2, 13, 1698121516, 1698121516);
-INSERT INTO `admin_role_relation` VALUES (4, 2, 14, 1698121516, 1698121516);
 INSERT INTO `admin_role_relation` VALUES (5, 1, 11, 1698121919, 1698121919);
 
 -- ----------------------------

@@ -6,7 +6,9 @@
 
 namespace App\Control;
 
+use App\Exception\AppException;
 use App\Lib\Util\Session;
+use Wms\Constant\ErrorCode;
 use Wms\Database\WDbConnect;
 use Wms\Fw\Request;
 use Wms\Fw\WDb;
@@ -33,6 +35,9 @@ class Control
     protected function init(): void
     {
 
+        if (!Session::get('userId')) {
+            throw new AppException("没有权限", ErrorCode::NO_PERMISSION);
+        }
 
     }
 
