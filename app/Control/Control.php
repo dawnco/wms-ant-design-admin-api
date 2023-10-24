@@ -6,6 +6,7 @@
 
 namespace App\Control;
 
+use App\Lib\Util\Session;
 use Wms\Database\WDbConnect;
 use Wms\Fw\Request;
 use Wms\Fw\WDb;
@@ -23,12 +24,16 @@ class Control
     public function __construct($request)
     {
         $this->request = $request;
+        $xToken = $this->request->getHeaderLine('Authorization') ?: '';
+        Session::start($xToken);
+        $this->db = WDb::connection();
         $this->init();
     }
 
     protected function init(): void
     {
-        $this->db = WDb::connection();
+
+
     }
 
     protected function input($key = null, $default = '')
