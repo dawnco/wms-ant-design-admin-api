@@ -7,6 +7,7 @@
 return [
     "env" => "dev",   // 环境 dev 开发  production 生产,
     "shell_dir" => dirname(__DIR__) . "/app/Shell",
+    "base_uri" => "/api",
     "log" => [
         'level' => "info", // 日志登录  debug info  warning error
         'dir' => dirname(__DIR__) . "/log", // 日志目录
